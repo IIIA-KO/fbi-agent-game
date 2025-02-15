@@ -1,49 +1,112 @@
 # FBI Agent Management Game
 
-## Description
+A web-based game where players manage an FBI agent's well-being by strategically balancing vital statistics and resources to keep the agent operational.
 
-A web-based game where players manage an FBI agent's well-being by balancing their energy, stress, and mood levels. Players must strategically use limited resources like coffee, donuts, and breaks to keep the agent operational while managing the energy cost of acquiring new resources.
+## Overview
+
+Players must manage an FBI agent's energy, stress, and mood levels while strategically using limited resources like coffee, donuts, and breaks. The game challenges players to make tactical decisions about resource usage and acquisition to prevent the agent from reaching critical conditions.
+
+### Key Features
+
+- Real-time status monitoring
+- Resource management system
+- Strategic decision-making
+- Dynamic game state updates
+
+## Installation
+
+### Prerequisites
+
+- Docker
+- Docker Compose
+
+### Quick Start
+
+1. Clone the repository
+
+    ```bash
+    git clone https://github.com/IIIA-KO/fbi-agent-game
+    cd fbi-agent-game
+    ```
+
+2. Build and start the containers
+
+    ```bash
+    docker-compose up --build -d
+    ```
+
+3. Access the application:
+
+- Frontend: `http://localhost:3000`
+- Backend API: `http://localhost:4308`
 
 ## Game Rules
 
 ### Agent Status
 
-The agent has three vital statistics that players must monitor:
-
-- **Energy** (0-100%): Decreases over time and when buying resources
-- **Stress** (0-100%): Increases over time, affected by coffee consumption
-- **Mood** (0-100%): Decreases over time, improved by donuts
+- Energy (0-100%): Decreases over time and when buying resources
+- Stress (0-100%): Increases over time, affected by coffee consumption
+- Mood (0-100%): Decreases over time, improved by donuts
 
 ### Resources
 
-Players manage three types of resources:
+- Coffee: Increases energy but adds stress
+- Donuts: Improves mood and slightly boosts energy
+- Breaks: Reduces stress but costs energy
 
-- **Coffee**: Increases energy but adds stress
-- **Donuts**: Improves mood and slightly boosts energy
-- **Breaks**: Reduces stress but costs energy
+### Resource Costs
 
-### Resource Management
+- Coffee: 20 energy for 3 units
+- Donuts: 15 energy for 2 units
+- Breaks: Limited and cannot be replenished
 
-- Resources are limited and must be purchased using agent's energy
-- Coffee costs 20 energy for 3 units
-- Donuts cost 15 energy for 2 units
-- Breaks are limited and cannot be replenished
+## API Endpoints
 
-### Game Over Conditions
+### Get Agent Status
 
-The game ends if any of these occur:
+```curl
+GET http://localhost:4308/agent/status
+```
 
-- Energy reaches 0% (Agent collapses from exhaustion)
-- Stress reaches 100% (Agent has a mental breakdown)
-- Mood reaches 0% (Agent quits the FBI)
+Response:
 
-### Passive Effects
+```json
+{
+    "agentStatus": 
+    {
+        "energy": 100,
+        "stress": 0,
+        "mood": 100,
+        "isAlive": true
+    },
+    "resources": 
+    {
+        "coffee": 5,
+        "donuts": 3,
+        "breakTime": 3
+    },
+    "gameOver": false,
+    "message": ""
+}
+```
 
-Every 10 seconds:
+### Perform Action
 
-- Energy decreases by 2%
-- Stress increases by 3%
-- Mood decreases by 1%
+```curl
+POST http://localhost:4308/agent/action
+Content-Type: application/json
+{
+    "action": "give_coffee"
+}
+```
+
+Available actions:
+
+- `give_coffee`
+- `give_donuts`
+- `take_break`
+- `buy_coffee`
+- `buy_donuts`
 
 ## Technical Stack
 
@@ -52,42 +115,50 @@ Every 10 seconds:
 - Node.js
 - Express.js
 - CORS middleware
-- In-memory game state management
 
 ### Frontend
 
 - Angular 19
 - TypeScript
 - RxJS for state management
-- HTTP Client for API communication
 
 ### Deployment
 
 - Docker
-- Docker Compose for service orchestration
-
-## Getting Started
-
-### Prerequisites
-
-- Docker
 - Docker Compose
 
-### Installation and Running
+## Development
 
-1. Clone the repository
+### Running Frontend in Development Mode
 
-    ```bach
-    git clone https://github.com/IIIA-KO/fbi-agent-game
-    ```
+```bash
+cd fbi-agent-game-frontend
+npm install
+ng serve
+```
 
-2. Build and start the containers:
+Access the development server at `http://localhost:4200`
 
-    ```bash
-    docker-compose up --build
-    ```
+### Running Backend in Development Mode
 
-3. Access the game:
+```bash
+cd fbi-agent-game-backend
+npm install
+node server.js
+```
 
-- Open your browser and navigate to `http://localhost:3000`
-- The backend API will be available at `http://localhost:4308`
+## License
+
+This project is licensed under the ISC License.
+
+## Author
+
+Illia Kotvitskyi
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
