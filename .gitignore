@@ -1,0 +1,60 @@
+# Frontend
+/fbi-agent-game-frontend/node_modules
+/fbi-agent-game-frontend/dist
+/fbi-agent-game-frontend/.angular
+/fbi-agent-game-frontend/coverage
+/fbi-agent-game-frontend/tmp
+/fbi-agent-game-frontend/.env
+/fbi-agent-game-frontend/.env.*
+
+# Backend
+/fbi-agent-game-backend/node_modules
+/fbi-agent-game-backend/dist
+/fbi-agent-game-backend/coverage
+/fbi-agent-game-backend/.env
+/fbi-agent-game-backend/.env.*
+
+# Angular specific
+.angular
+
+# TypeScript
+*.tsbuildinfo
+
+# IDE
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs
+*.log
+
+# Testing
+/coverage
+/.nyc_output
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Package manager
+package-lock.json
+yarn.lock
+.npm
+.yarn
+
+# Build
+/dist
+/tmp
+/out-tsc

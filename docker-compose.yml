@@ -1,0 +1,10 @@
+version: '3'
+services:
+  backend:
+    build: ./fbi-agent-game-backend
+    ports:
+     - "4308:4308"
+  frontend:
+    build: ./fbi-agent-game-frontend
+    ports:
+     - "3000:3000"
