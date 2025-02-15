@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "generate-license-report": "echo 'Frontend Dependencies:\n=====================\n' > LICENSE_REPORT.txt && cd fbi-agent-game-frontend && npx license-checker --summary >> ../LICENSE_REPORT.txt && echo '\nBackend Dependencies:\n====================\n' >> ../LICENSE_REPORT.txt && cd ../fbi-agent-game-backend && npx license-checker --summary >> ../LICENSE_REPORT.txt"
+  }
+} 

@@ -1,0 +1,27 @@
+Frontend Dependencies:
+=====================
+
+├─ MIT: 653
+├─ ISC: 98
+├─ Apache-2.0: 30
+├─ BSD-2-Clause: 19
+├─ BSD-3-Clause: 16
+├─ BlueOak-1.0.0: 5
+├─ Python-2.0: 1
+├─ CC-BY-4.0: 1
+├─ UNLICENSED: 1
+├─ (BSD-3-Clause OR GPL-2.0): 1
+├─ CC-BY-3.0: 1
+├─ CC0-1.0: 1
+├─ Unlicense: 1
+├─ 0BSD: 1
+└─ (MIT OR CC0-1.0): 1
+
+
+Backend Dependencies:
+====================
+
+├─ MIT: 68
+├─ ISC: 3
+└─ BSD-3-Clause: 1
+
