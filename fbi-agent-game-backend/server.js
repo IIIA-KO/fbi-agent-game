@@ -2,8 +2,11 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const port = 4308;
+const swaggerUI = require('swagger-ui-express');
+const swaggerSpec = require('./swagger');
 
 app.use(cors());
+app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerSpec));
 app.use(express.json());
 
 let gameState = {
@@ -59,10 +62,77 @@ const applyPassiveEffects = () => {
 // Start passive effects timer
 setInterval(applyPassiveEffects, 10000); // Every 10 seconds
 
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     AgentStatus:
+ *       type: object
+ *       properties:
+ *         agentStatus:
+ *           $ref: '#/components/schemas/AgentDetails'
+ *         resources:
+ *           $ref: '#/components/schemas/AgentResources'
+ *         gameOver:
+ *           type: boolean
+ *         message:
+ *           type: string
+ * 
+ *     AgentDetails:
+ *       type: object
+ *       properties:
+ *         energy:
+ *           type: number
+ *         stress:
+ *           type: number
+ *         mood:
+ *           type: number
+ *         isAlive:
+ *           type: boolean
+ * 
+ *     AgentResources:
+ *       type: object
+ *       properties:
+ *         coffee:
+ *           type: number
+ *         donuts:
+ *           type: number
+ *         breakTime:
+ *           type: number
+ * /agent/status:
+ *   get:
+ *     summary: Get current agent status and resources
+ *     tags: [Agent]
+ *     responses:
+ *       200:
+ *         description: Successful response
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/AgentStatus'
+ */
 app.get('/agent/status', (req, res) => {
     res.json(gameState);
 });
 
+/**
+ * @swagger
+ * /agent/action:
+ *   post:
+ *     summary: Perform an agent action
+ *     tags: [Agent]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/ActionRequest'
+ *     responses:
+ *       200:
+ *         description: Action successful
+ *       400:
+ *         description: Invalid action
+ */
 app.post('/agent/action', (req, res) => {
     if (gameState.gameOver) {
         return res.json(gameState);
@@ -142,7 +212,32 @@ app.post('/agent/action', (req, res) => {
     res.json(gameState);
 });
 
-// Reset game endpoint
+/**
+ * @swagger
+ * /agent/reset:
+ *   post:
+ *     summary: Reset game to initial state
+ *     tags: [Agent]
+ *     responses:
+ *       200:
+ *         description: Game reset successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/AgentStatus'
+ *             example:
+ *               agentStatus:
+ *                 energy: 100
+ *                 stress: 0
+ *                 mood: 100
+ *                 isAlive: true
+ *               resources:
+ *                 coffee: 5
+ *                 donuts: 3
+ *                 breakTime: 3
+ *               gameOver: false
+ *               message: "Game reset! Good luck!"
+ */
 app.post('/agent/reset', (req, res) => {
     gameState = {
         agentStatus: {

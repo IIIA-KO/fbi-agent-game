@@ -25,7 +25,8 @@ sidebar_position: 2
 3. Access the application:
    - Frontend: `http://localhost:3000`
    - Backend API: `http://localhost:4308`
-   - Documentation: `http://localhost:3001`
+   - API Documentation: `http://localhost:4308/api-docs`
+   - Game Documentation: `http://localhost:3001`
    - Storybook: `http://localhost:6006`
 
 ## Docker Services
