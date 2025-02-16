@@ -39,6 +39,8 @@ Players must manage an FBI agent's energy, stress, and mood levels while strateg
 
 - Frontend: `http://localhost:3000`
 - Backend API: `http://localhost:4308`
+- Storybook: `http://localhost:6006`
+- Documentation: `http://localhost:3001`
 
 ## Game Rules
 

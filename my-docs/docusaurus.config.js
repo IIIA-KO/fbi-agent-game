@@ -4,8 +4,8 @@ const config = {
   tagline: 'Manage your agent wisely!',
   favicon: 'img/favicon.ico',
 
-  url: 'https://your-docusaurus-site.example.com',
-  baseUrl: '/',
+  url: 'http://localhost:3001',
+  baseUrl: '',
 
   organizationName: 'IIIA-KO',
   projectName: 'fbi-agent-game', // Your repo name.

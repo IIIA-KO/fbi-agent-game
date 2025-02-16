@@ -58,3 +58,8 @@ yarn.lock
 /dist
 /tmp
 /out-tsc
+
+# Storybook
+.storybook
+*storybook.log
+storybook-static/

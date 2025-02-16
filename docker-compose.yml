@@ -1,10 +1,30 @@
-version: '3'
 services:
   backend:
+    container_name: fbi-agent-game-backend
     build: ./fbi-agent-game-backend
     ports:
      - "4308:4308"
+  
   frontend:
+    container_name: fbi-agent-game-frontend
     build: ./fbi-agent-game-frontend
     ports:
      - "3000:3000"
+  
+  docs:
+    container_name: fbi-agent-game-docusaurus
+    build: ./my-docs
+    ports:
+      - "3001:3001"
+    depends_on:
+      - frontend
+
+  storybook:
+    container_name: fbi-agent-game-storybook
+    build: 
+      context: ./fbi-agent-game-frontend
+      dockerfile: Dockerfile.storybook
+    ports:
+      - "6006:6006"
+    depends_on:
+      - frontend

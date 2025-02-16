@@ -1,0 +1,23 @@
+.progress-bar {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  height: 20px;
+}
+
+.progress {
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.progress.low {
+  background-color: red;
+}
+
+.progress.medium {
+  background-color: orange;
+}
+
+.progress.high {
+  background-color: green;
+}
