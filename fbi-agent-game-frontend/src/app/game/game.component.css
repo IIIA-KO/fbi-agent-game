@@ -1,0 +1,109 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.message-box {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  text-align: center;
+  color: var(--ifm-color-content);
+}
+
+.status-container, .actions-container, .resources-container {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background: var(--ifm-color-primary);
+  color: var(--ifm-color-content);
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover:not(:disabled) {
+  background: #1976D2;
+}
+
+.game-over-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.reset-button {
+  background: #4CAF50;
+  font-size: 1.2em;
+  padding: 15px 30px;
+}
+
+.status-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.status-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.status-item label {
+  width: 80px; /* Adjust width as needed */
+  color: var(--ifm-color-content); /* Use the defined color variable */
+}
+
+.progress-bar {
+  flex: 1;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.1); /* Light background for the bar */
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative; /* For positioning the inner progress */
+}
+
+.progress {
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.progress.energy {
+  background: #2196F3; /* Blue for energy */
+}
+
+.progress.stress {
+  background: #f44336; /* Red for stress */
+}
+
+.progress.mood {
+  background: #4CAF50; /* Green for mood */
+}
+
+/* Optional: Add percentage text inside the progress bar */
+.progress-text {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  color: var(--ifm-color-content); /* Use the defined color variable */
+  font-weight: bold;
+}

@@ -1,0 +1,31 @@
+.cookie-consent {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--ifm-background-surface-color);
+  color: var(--ifm-color-content);
+  padding: 1.5rem;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.cookie-consent p {
+  margin: 0;
+  max-width: 800px;
+}
+
+.cookie-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.button.secondary {
+  background: transparent;
+  border: 1px solid var(--ifm-color-primary);
+}

@@ -8,6 +8,15 @@ sidebar_position: 5
 
 This Privacy Policy explains how we collect, use, and protect your personal information when you use the FBI Agent Management Game (the "Service"). We are committed to safeguarding your privacy and ensuring that your personal information is handled responsibly.
 
+## Cookies
+
+We use strictly necessary cookies to store your consent preferences. These cookies:
+
+- Are essential for basic site functionality
+- Store your cookie consent state
+- Have a 12-month expiration period
+- Contain no personally identifiable information
+
 ## Information We Collect
 
 We may collect the following types of information:
@@ -35,5 +44,5 @@ If you are a resident of the European Economic Area (EEA), you have certain data
 
 If you have any questions about this Privacy Policy, please contact us:
 
-- Email: support@fbi-agent-game.com
-- Website: www.fbi-agent-game.com
+- Email: `support@fbi-agent-game.com`
+- Website: `www.fbi-agent-game.com`

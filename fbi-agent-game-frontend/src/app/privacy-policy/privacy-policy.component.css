@@ -1,0 +1,8 @@
+.privacy-policy {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  color: var(--ifm-color-content);
+}
+h1 { color: var(--ifm-color-primary); }
+section { margin: 2rem 0; }

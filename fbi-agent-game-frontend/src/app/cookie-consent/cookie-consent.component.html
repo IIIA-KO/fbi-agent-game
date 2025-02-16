@@ -1,0 +1,9 @@
+<div *ngIf="showConsent" class="cookie-consent">
+  <p>We use cookies to enhance your experience. By continuing, you agree to our
+    <a routerLink="/privacy-policy">Privacy Policy</a>.
+  </p>
+  <div class="cookie-buttons">
+    <button class="button" (click)="acceptCookies()">Accept</button>
+    <button class="button secondary" (click)="declineCookies()">Decline</button>
+  </div>
+</div>
