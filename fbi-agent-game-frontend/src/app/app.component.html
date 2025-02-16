@@ -11,25 +11,28 @@
       <div class="status-item">
         <label>Energy:</label>
         <div class="progress-bar">
-          <div class="progress energy" [style.width]="gameState?.agentStatus?.energy + '%'"></div>
+          <div class="progress energy" [style.width]="gameState?.agentStatus?.energy + '%'">
+            <span class="progress-text">{{ gameState?.agentStatus?.energy }}%</span>
+          </div>
         </div>
-        <span>{{gameState?.agentStatus?.energy}}%</span>
       </div>
 
       <div class="status-item">
         <label>Stress:</label>
         <div class="progress-bar">
-          <div class="progress stress" [style.width]="gameState?.agentStatus?.stress + '%'"></div>
+          <div class="progress stress" [style.width]="gameState?.agentStatus?.stress + '%'">
+            <span class="progress-text">{{ gameState?.agentStatus?.stress }}%</span>
+          </div>
         </div>
-        <span>{{gameState?.agentStatus?.stress}}%</span>
       </div>
 
       <div class="status-item">
         <label>Mood:</label>
         <div class="progress-bar">
-          <div class="progress mood" [style.width]="gameState?.agentStatus?.mood + '%'"></div>
+          <div class="progress mood" [style.width]="gameState?.agentStatus?.mood + '%'">
+            <span class="progress-text">{{ gameState?.agentStatus?.mood }}%</span>
+          </div>
         </div>
-        <span>{{gameState?.agentStatus?.mood}}%</span>
       </div>
     </div>
   </div>
@@ -46,21 +49,21 @@
   <div class="actions-container" *ngIf="!gameState?.gameOver">
     <h2>Actions</h2>
     <div class="button-group">
-      <button (click)="performAction('give_coffee')" [disabled]="gameState?.resources?.coffee <= 0">
+      <button class="button" (click)="performAction('give_coffee')" [disabled]="gameState?.resources?.coffee <= 0">
         Give Coffee
       </button>
-      <button (click)="performAction('give_donuts')" [disabled]="gameState?.resources?.donuts <= 0">
+      <button class="button" (click)="performAction('give_donuts')" [disabled]="gameState?.resources?.donuts <= 0">
         Give Donuts
       </button>
-      <button (click)="performAction('take_break')" [disabled]="gameState?.resources?.breakTime <= 0">
+      <button class="button" (click)="performAction('take_break')" [disabled]="gameState?.resources?.breakTime <= 0">
         Take Break
       </button>
     </div>
     <div class="button-group">
-      <button (click)="performAction('buy_coffee')" [disabled]="gameState?.agentStatus?.energy < 20">
+      <button class="button" (click)="performAction('buy_coffee')" [disabled]="gameState?.agentStatus?.energy < 20">
         Buy Coffee (-20 Energy)
       </button>
-      <button (click)="performAction('buy_donuts')" [disabled]="gameState?.agentStatus?.energy < 15">
+      <button class="button" (click)="performAction('buy_donuts')" [disabled]="gameState?.agentStatus?.energy < 15">
         Buy Donuts (-15 Energy)
       </button>
     </div>

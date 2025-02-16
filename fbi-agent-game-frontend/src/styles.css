@@ -1,1 +1,70 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  /* Main colors */
+  --ifm-color-primary: #c41e3a; /* A deep red */
+  --ifm-background-color: #212020; /* Black background */
+  --ifm-background-surface-color: #1a1a1a; /* Slightly lighter black for cards */
+  --ifm-color-content: #ffffff; /* White text */
+  --ifm-menu-color: #ffffff; /* White text in sidebar */
+  --ifm-toc-border-color: #625154; /* Red border for table of contents */
+}
+
+/* General styles */
+body {
+  background-color: var(--ifm-background-color);
+  color: var(--ifm-color-content);
+  font-family: Arial, sans-serif;
+}
+
+h1, h2, h3 {
+  color: var(--ifm-color-primary);
+}
+
+/* Button styles */
+.button {
+  background-color: var(--ifm-color-primary);
+  color: var(--ifm-color-content);
+  border: 2px solid var(--ifm-color-primary);
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.button:hover {
+  background-color: var(--ifm-color-primary);
+  opacity: 0.8;
+}
+
+/* Hero section */
+.hero--primary {
+  background: repeating-linear-gradient(
+    45deg,
+    #000000,
+    #000000 10px,
+    #ffffff 10px,
+    #ffffff 20px
+  );
+}
+
+/* Feature cards */
+.feature-card {
+  background-color: rgba(0, 0, 0, 0.9);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.feature-card h3 {
+  color: var(--ifm-color-primary);
+}
+
+.feature-card p {
+  color: var(--ifm-color-content);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 996px) {
+  .hero--primary {
+    padding: 2rem;
+  }
+}

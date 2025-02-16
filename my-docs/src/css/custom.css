@@ -1,0 +1,186 @@
+:root {
+  /* Main colors */
+  --ifm-color-primary: #c41e3a; /* A deep red */
+  --ifm-color-primary-dark: #b01b34;
+  --ifm-color-primary-darker: #a61a31;
+  --ifm-color-primary-darkest: #891529;
+  --ifm-color-primary-light: #d02442;
+  --ifm-color-primary-lighter: #d32d4a;
+  --ifm-color-primary-lightest: #da4861;
+  
+  /* Background and text colors */
+  --ifm-background-color: #212020; /* Black background */
+  --ifm-background-surface-color: #1a1a1a; /* Slightly lighter black for cards */
+  --ifm-color-content: #ffffff; /* White text */
+  --ifm-menu-color: #ffffff; /* White text in sidebar */
+  --ifm-toc-border-color: #625154; /* Red border for table of contents */
+  
+  /* Navbar customization */
+  --ifm-navbar-background-color: #000000;
+  --ifm-navbar-link-color: #ffffff;
+  --ifm-navbar-link-hover-color: #c41e3a;
+  
+  /* Sidebar customization */
+  --ifm-sidebar-background: #000000;
+  --ifm-menu-color-active: #c41e3a;
+  --ifm-menu-color-background-active: rgba(196, 30, 58, 0.1);
+}
+
+/* Dark mode overrides */
+[data-theme='dark'] {
+  --ifm-background-color: #000000;
+  --ifm-background-surface-color: #1a1a1a;
+}
+
+/* Hero section (homepage) */
+.hero--primary {
+  --ifm-hero-background-color: #000000;
+  --ifm-hero-text-color: #ffffff;
+  background: repeating-linear-gradient(
+    45deg,
+    #000000,
+    #000000 10px,
+    #ffffff 10px,
+    #ffffff 20px
+  );
+}
+
+.hero__title,
+.hero__subtitle {
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 20px;
+  border-radius: 8px;
+  margin: 10px auto;
+  max-width: 800px;
+}
+
+.buttons {
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 20px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+/* Features section */
+.features {
+  background-color: #000000;
+  padding: 2rem;
+}
+
+/* Feature cards */
+.col--4 {
+  background-color: rgba(0, 0, 0, 0.9);
+  border-radius: 8px;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.col--4 h3 {
+  color: #c41e3a;
+}
+
+.col--4 p {
+  color: #ffffff;
+}
+
+/* Make text more readable */
+.text--center {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Add a zigzag pattern to the sidebar */
+.theme-doc-sidebar-container {
+  background: repeating-linear-gradient(
+    45deg,
+    #000000,
+    #000000 10px,
+    #1a1a1a 10px,
+    #1a1a1a 20px
+  );
+}
+
+/* Style links */
+.navbar__link:hover,
+.menu__link:hover {
+  color: #c41e3a;
+  text-shadow: 0 0 8px rgba(196, 30, 58, 0.5);
+}
+
+/* Style code blocks */
+.prism-code {
+  background-color: #1a1a1a !important;
+  border: 1px solid #c41e3a;
+}
+
+/* Style inline code */
+code {
+  background-color: rgba(196, 30, 58, 0.1);
+  color: #c41e3a;
+}
+
+/* Style blockquotes */
+blockquote {
+  border-left: 4px solid #c41e3a;
+  background-color: rgba(196, 30, 58, 0.1);
+}
+
+/* Add a subtle pulsing animation to active menu items */
+.menu__link--active {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    text-shadow: 0 0 5px rgba(196, 30, 58, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(196, 30, 58, 0.8);
+  }
+  100% {
+    text-shadow: 0 0 5px rgba(196, 30, 58, 0.5);
+  }
+}
+
+/* Style tables */
+table {
+  border: 1px solid #c41e3a;
+}
+
+th {
+  background-color: #c41e3a;
+  color: #ffffff;
+}
+
+tr:nth-child(even) {
+  background-color: rgba(196, 30, 58, 0.1);
+}
+
+/* Style buttons */
+.button--secondary {
+  background-color: #c41e3a;
+  color: #ffffff;
+  border: 2px solid #c41e3a;
+}
+
+.button--secondary:hover {
+  background-color: #c41e3a;
+  color: #ffffff;
+}
+
+/* Add a zigzag pattern to the sidebar */
+.theme-doc-sidebar-container {
+  background: repeating-linear-gradient(
+    45deg,
+    #000000,
+    #000000 10px,
+    #ffffff 10px,
+    #ffffff 20px
+  );
+}
+
+/* Add contrast for content over the zigzag pattern */
+.theme-doc-sidebar-container nav {
+  background-color: rgba(0, 0, 0, 0.9);
+  margin: 1rem;
+  border-radius: 8px;
+}
