@@ -160,7 +160,6 @@ Available actions:
 
 - Angular 19
 - TypeScript
-- RxJS for state management
 
 ### Deployment
 
