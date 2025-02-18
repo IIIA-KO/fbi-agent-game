@@ -1,12 +1,31 @@
 # FBI Agent Management Game
 
-A web-based game where players manage an FBI agent's well-being by strategically balancing vital statistics and resources to keep the agent operational.
+This repository was created for the course **Software Standardization and Documentation**. The **FBI Agent Management Game** is a web-based game where players manage an FBI agent's well-being by strategically balancing vital statistics and resources to keep the agent operational.
+
+## Table of Contents
+
+- [FBI Agent Management Game](#fbi-agent-management-game)
+  - [Table of Contents](#table-of-contents)
+  - [Overview](#overview)
+  - [Key Features](#key-features)
+  - [Installation](#installation)
+    - [Prerequisites](#prerequisites)
+    - [Quick Start](#quick-start)
+  - [Game Rules](#game-rules)
+  - [API Documentation](#api-documentation)
+  - [Technical Stack](#technical-stack)
+  - [Development](#development)
+    - [Running Frontend in Development Mode](#running-frontend-in-development-mode)
+    - [Running Backend in Development Mode](#running-backend-in-development-mode)
+  - [License](#license)
+  - [Author](#author)
+  - [Contributing](#contributing)
 
 ## Overview
 
 Players must manage an FBI agent's energy, stress, and mood levels while strategically using limited resources like coffee, donuts, and breaks. The game challenges players to make tactical decisions about resource usage and acquisition to prevent the agent from reaching critical conditions.
 
-### Key Features
+## Key Features
 
 - Real-time status monitoring
 - Resource management system
@@ -22,149 +41,37 @@ Players must manage an FBI agent's energy, stress, and mood levels while strateg
 
 ### Quick Start
 
-1. Clone the repository
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/IIIA-KO/fbi-agent-game
+   cd fbi-agent-game
+   ```
 
-    ```bash
-    git clone https://github.com/IIIA-KO/fbi-agent-game
-    cd fbi-agent-game
-    ```
-
-2. Build and start the containers
-
-    ```bash
-    docker-compose up --build -d
-    ```
+2. Build and start the containers:
+   ```bash
+   docker-compose up --build -d
+   ```
 
 3. Access the application:
-
-- Frontend: `http://localhost:3000`
-- Backend API: `http://localhost:4308`
-- Storybook: `http://localhost:6006`
-- Documentation: `http://localhost:3001`
+   - Frontend: `http://localhost:3000`
+   - Backend API: `http://localhost:4308`
+   - Documentation: `http://localhost:3001`
+   - Storybook: `http://localhost:6006`
 
 ## Game Rules
 
-### Agent Status
+- **Agent Status**: Manage energy, stress, and mood levels.
+- **Resources**: Use coffee, donuts, and breaks strategically.
 
-- Energy (0-100%): Decreases over time and when buying resources
-- Stress (0-100%): Increases over time, affected by coffee consumption
-- Mood (0-100%): Decreases over time, improved by donuts
+## API Documentation
 
-### Resources
-
-- Coffee: Increases energy but adds stress
-- Donuts: Improves mood and slightly boosts energy
-- Breaks: Reduces stress but costs energy
-
-### Resource Costs
-
-- Coffee: 20 energy for 3 units
-- Donuts: 15 energy for 2 units
-- Breaks: Limited and cannot be replenished
-
-## API Endpoints
-
-### Swagger Documentation
-
-Access interactive API documentation at:
-
-```curl
-http://localhost:4308/api-docs
-```
-
-### Get Agent Status
-
-```curl
-GET http://localhost:4308/agent/status
-```
-
-Response:
-
-```json
-{
-    "agentStatus": 
-    {
-        "energy": 100,
-        "stress": 0,
-        "mood": 100,
-        "isAlive": true
-    },
-    "resources": 
-    {
-        "coffee": 5,
-        "donuts": 3,
-        "breakTime": 3
-    },
-    "gameOver": false,
-    "message": ""
-}
-```
-
-### Perform Action
-
-```curl
-POST http://localhost:4308/agent/action
-Content-Type: application/json
-{
-    "action": "give_coffee"
-}
-```
-
-### Reset Game
-
-```curl
-POST http://localhost:4308/agent/reset
-```
-
-Response:
-
-```json
-{
-    "agentStatus": 
-    {
-        "energy": 100,
-        "stress": 0,
-        "mood": 100,
-        "isAlive": true
-    },
-    "resources": 
-    {
-        "coffee": 5,
-        "donuts": 3,
-        "breakTime": 3
-    },
-    "gameOver": false,
-    "message": "Game reset! Good luck!"
-    }
-```
-
-Available actions:
-
-- `give_coffee`
-- `give_donuts`
-- `take_break`
-- `buy_coffee`
-- `buy_donuts`
-
-
+For detailed API endpoints, responses, and usage, please refer to the [Wiki](https://github.com/IIIA-KO/fbi-agent-game/wiki).
 
 ## Technical Stack
 
-### Backend
-
-- Node.js
-- Express.js
-- CORS middleware
-
-### Frontend
-
-- Angular 19
-- TypeScript
-
-### Deployment
-
-- Docker
-- Docker Compose
+- **Backend**: Node.js, Express.js
+- **Frontend**: Angular 19, TypeScript
+- **Deployment**: Docker, Docker Compose
 
 ## Development
 
@@ -176,7 +83,7 @@ npm install
 ng serve
 ```
 
-Access the development server at `http://localhost:4200`
+Access the development server at `http://localhost:4200`.
 
 ### Running Backend in Development Mode
 
